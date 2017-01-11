@@ -36,3 +36,12 @@ function alphaEmail(a, b) {
     }
 }
 console.log(contacts.sort(alphaEmail));
+
+//3. Create a function that can be used with Array.prototype.map. This function should take a number and return its square.//
+//Then, use this function with map on an array of numbers to check the result.//
+var numbArr = [3, 9, 5, 74, 285, 1001, 54, 17];
+
+var sqrArr = numbArr.map(function(x) {
+   return x*x;
+});
+console.log(sqrArr);
