@@ -45,3 +45,17 @@ var sqrArr = numbArr.map(function(x) {
    return x*x;
 });
 console.log(sqrArr);
+
+//4. Create a function that can be used with Array.prototype.map.//
+//This function should be able to take an object and square its “num” property.// 
+//Then, use this function with map on an array of objects each containming a “num” property.//
+var objArr = [
+    {name: "Alex", num: 345},
+    {name: "Fauster", num: 777},
+    {name: "Eefa", num: 13},
+    {name: "Anabelle", num: 24},
+];
+function squareNum(x) {
+   return x.num * x.num;
+}
+console.log(objArr.map(squareNum));
