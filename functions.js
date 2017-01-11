@@ -59,3 +59,52 @@ function squareNum(x) {
    return x.num * x.num;
 }
 console.log(objArr.map(squareNum));
+//5. In a previous workshop, you had to create a function that took two numbers and an operation (add, sub, mult, …)//
+//and returned the result of the operation on the two numbers. Here we are going to do the same but at a higher order.//
+//Create a function called operationMaker that takes only a string called operation as argument.//
+//This string could be “add”, “subtract”, “mult” or “div”.//
+//Your function will return a function that will take two numbers and return the result of running operation on these numbers.// 
+//The end result should let me do something like this://
+//var adder = operationMaker(“add”);//
+//var sum = adder(5, 10); //15//
+
+//var mult = operationMaker(“mult”);//
+//var product = mult(5, 10); // 50//
+
+function operationMaker(operation) {
+    if (operation === "add") {
+        return function add(a,b){
+            return a + b;
+        }
+    }
+    if(operation === "sub") {
+        return function sub(a,b){
+            return a - b;
+        }
+    }
+    if(operation === "mult") {
+        return function mult(a,b){
+            return a * b;
+        }
+    }
+    if(operation === "div") {
+        return function div(a,b) {
+            return a / b;
+        }
+    }
+}
+var adder = operationMaker("add");
+var sum = adder(5, 10);
+console.log(sum);
+
+var subtracter = operationMaker("sub");
+var diff = subtracter(10, 20);
+console.log(diff);
+
+var multiplier = operationMaker("mult");
+var product = multiplier(7, 9);
+console.log(product);
+
+var divider = operationMaker("div");
+var div = divider(9, 3);
+console.log(div);
