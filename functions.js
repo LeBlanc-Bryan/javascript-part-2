@@ -8,3 +8,31 @@ function compare(a, b) {
 }
 
 console.log(names.sort(compare));
+
+//2. Create an array of objects (don’t need to use new here, just regular object literals).//
+//These objects will contain a name and email property. Then, run some code that will sort your array by the longest name.// 
+//Then, run some code that will sort your array by e-mail address in alphabetical order.//
+var contacts = [
+    {name: "yarn", email: "yarn@hotmail.com"},
+    {name: "big daddy", email: "bigdaddio@gmail.com"},
+    {name: "andarc", email: "andrewnovosad@hotmail.com"},
+    {name: "darkmaster", email: "dm@master.com"}
+    ];
+
+function compareNames(a, b) {
+    return b.name.length - a.name.length; 
+}
+console.log(contacts.sort(compareNames));
+
+function alphaEmail(a, b) {
+    if(a.email < b.email) {
+        return -1;
+    } 
+    else if (a.email > b.email) {
+        return 1;
+    }
+    else {
+    return 0;
+    }
+}
+console.log(contacts.sort(alphaEmail));
